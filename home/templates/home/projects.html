@@ -1,0 +1,23 @@
+{% extends 'home/layout.html' %}
+
+{% block content %}
+{% for each in projects %}
+    <div class="thumbnail">
+        <h3 align="center">{{each.title}}</h3>
+        {% if each.thumb %}
+        <img id="projectPic" src="{{ each.thumb.url }}">
+        {% endif %}
+        {% if each.thumb1 %}
+        <img id="projectPic" src="{{ each.thumb1.url }}">
+        {% endif %}
+        {% if each.thumb2 %}
+        <img id="projectPic" src="{{ each.thumb2.url }}">
+        {% endif %}
+        {% if each.thumb3 %}
+        <img id="projectPic" src="{{ each.thumb3.url }}">
+        {% endif %}
+        <p><h4>Description:</h4> {{ each.description }}</p>
+    </div>
+{% endfor %}
+
+{% endblock %}

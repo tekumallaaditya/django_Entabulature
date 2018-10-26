@@ -10,6 +10,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('projects/', views.projectPage, name='projects'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
