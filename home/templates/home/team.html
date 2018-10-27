@@ -1,0 +1,15 @@
+{% extends 'home/layout.html' %}
+
+{% block content %}
+
+{% for each in members %}
+<div class="thumbnail">
+    <h3>Name: {{ each.name }}</h3>
+    <h4>Designation:{{ each.designation }}</h4>
+    <img style="width: 25%;" src="{{ each.pic.url }}">
+    <p>Description: {{ each.description }}</p>
+</div>
+
+{% endfor %}
+
+{% endblock %}

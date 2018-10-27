@@ -1,0 +1,14 @@
+{% extends 'home/layout.html' %}
+
+{% block content %}
+
+{% for each in blogs %}
+<div class="thumbnail">
+    <h3>title: {{ each.title }}</h3>
+    <img style="width: 25%;" src="{{ each.pic.url }}">
+    <p>Story: {{ each.story }}</p>
+</div>
+
+{% endfor %}
+
+{% endblock %}

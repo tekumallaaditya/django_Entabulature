@@ -1,0 +1,12 @@
+{% extends 'home/layout.html' %}
+
+{% block content %}
+
+{% for each in pics %}
+<div class="thumbnail">
+    <img src="{{ each.thumb.url }}">
+</div>
+
+{% endfor %}
+
+{% endblock %}

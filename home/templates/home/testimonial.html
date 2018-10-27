@@ -1,0 +1,27 @@
+{% extends 'home/layout.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h2>Testimonials</h2>
+    {% for each in testimonials %}
+        <p>Name: {{ each.name }}</p>
+        <p>Testimonial: {{ each.testimonial }}</p>
+    {% endfor %}
+    <form method="post" class="post-form form-group">
+    {% csrf_token %}
+
+    {{form}}<br>
+
+
+    <button type="submit" class=" btn btn-danger">Save</button>
+
+    </form>
+
+</div>
+
+
+
+
+
+{% endblock %}

@@ -11,6 +11,12 @@ from django.conf import settings
 urlpatterns = [
     path('', views.home, name='home'),
     path('projects/', views.projectPage, name='projects'),
+    path('constructionPics/', views.constructionPics, name='constructionPics'),
+    path('elevationPics/', views.elevationPics, name='elevationPics'),
+    path('interiorPics/', views.interiorPics, name='interiorPics'),
+    path('team/', views.team, name='team'),
+    path('blog/', views.blog, name='blog'),
+    path('testimonials/', views.testimonials, name='testimonials'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
