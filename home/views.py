@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import homeDB, projectsDB, constructionPicsDB, elevationPicsDB, interiorPicsDB, teamDB, blogDB, testimonialDB
-from home.forms import testimonialForm
+from .models import homeDB, projectsDB, constructionPicsDB, elevationPicsDB, interiorPicsDB, teamDB, blogDB, testimonialDB, contactUsDB
+from home.forms import testimonialForm, contactUsForm
+from django.core.mail import send_mail
+from django.conf import settings
 
 def home(request):
     pics = homeDB.objects.all()[:13]
@@ -82,5 +84,27 @@ def testimonials(request):
             form.save()
 
     return render(request, template_name, {'form': form, 'testimonials': testimonials})
+
+def contactUs(request):
+    template_name = 'home/contactUs.html'
+    contactInfo = contactUsDB.objects.all()
+
+    if request.method == 'GET':
+        form = contactUsForm()
+
+    elif request.method == 'POST':
+        form = contactUsForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            sender = form.cleaned_data['sender']
+            message = form.cleaned_data['message']
+
+            subject = 'message from client %s ' %(name)
+            recipients = ['entabulatureharsha@gmail.com', sender]
+            send_mail(subject, message, settings.EMAIL_HOST_USER, recipients, fail_silently=False)
+
+    return render(request, template_name, {'form': form, 'contactInfo': contactInfo})
+
+
 
 

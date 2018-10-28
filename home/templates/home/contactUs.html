@@ -1,0 +1,29 @@
+{% extends 'home/layout.html' %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-6">
+        {% for each in contactInfo %}
+        <h3>Contact info for Entabulature</h3>
+        <p>Name: {{ each.name }}</p>
+        <p>email: {{ each.address }}</p>
+        <p>message: {{ each.phone }}</p>
+        {% endfor %}
+        </div>
+        <div class="col-md-6">
+            <h2>Contact us:</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{form}}<br>
+
+             <button class="btn btn-danger" type="submit">submit</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
