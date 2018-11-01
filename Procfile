@@ -1,1 +1,1 @@
-web: gunicorn home.wsgi
+web: gunicorn entabulature_py3.wsgi
