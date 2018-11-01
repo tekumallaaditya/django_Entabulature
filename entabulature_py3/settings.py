@@ -13,6 +13,21 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import dj_database_url
 
+
+
+
+import sys
+
+# Hack for running app directly.
+sys.path.insert(0, os.path.abspath('..'))
+# Hack for tests. 
+sys.path.insert(0, os.path.abspath('.'))
+
+import django_heroku
+
+
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -75,19 +90,19 @@ WSGI_APPLICATION = 'entabulature_py3.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'Django_Entabulature',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'Django_Entabulature',
+#     }
+# }
 
 
 # Password validation
@@ -144,3 +159,4 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static') """
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+django_heroku.settings(locals())
