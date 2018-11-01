@@ -4,13 +4,11 @@
 
 <div class="jumbotron">
     <div class="row">
-        <div class="col-md-6">
-        {% for each in contactInfo %}
-        <h3>Contact info for Entabulature</h3>
-        <p>Name: {{ each.name }}</p>
-        <p>email: {{ each.address }}</p>
-        <p>message: {{ each.phone }}</p>
-        {% endfor %}
+        <div id="contactInfo" class="col-md-6">
+            <h2 >Contact Details</h2>
+            <p>Name:  {{ contactInfo.0.name}} </p>
+            <p>Address: {{ contactInfo.0.address}}</p>
+            <p>Phone: {{ contactInfo.0.phone}}</p>
         </div>
         <div class="col-md-6">
             <h2>Contact us:</h2>

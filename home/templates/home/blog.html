@@ -3,12 +3,13 @@
 {% block content %}
 
 {% for each in blogs %}
-<div class="thumbnail">
-    <h3>title: {{ each.title }}</h3>
-    <img style="width: 25%;" src="{{ each.pic.url }}">
-    <p>Story: {{ each.story }}</p>
+<div class="row">
+    <div class="jumbotron">
+        <img src="{{ each.pic.url }}" alt="blog" style="width:100%">
+        <h3>title: {{ each.title }}</h3>
+        <p>{{ each.story }}</p>    
+    </div>
 </div>
-
 {% endfor %}
 
 {% endblock %}

@@ -1,4 +1,6 @@
 #backgroundImage  { background-image: url('background.jpg')}
 .item  {width: 100%; height: 550px; padding-left: 6%;  object-fit: contain;}
 projectPic > img {width: 50% }
-.contactInfo {background-color: aquamarine}
+#contactInfo { padding-top: 10%}
+#teamMember {width: 100%; height: 50%;}
+#temMemberPic {width: 50% }

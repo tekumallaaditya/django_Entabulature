@@ -3,11 +3,17 @@
 {% block content %}
 
 {% for each in members %}
-<div class="thumbnail">
-    <h3>Name: {{ each.name }}</h3>
-    <h4>Designation:{{ each.designation }}</h4>
-    <img style="width: 25%;" src="{{ each.pic.url }}">
-    <p>Description: {{ each.description }}</p>
+<div id="teamMember" class="jumbotron">
+    <div class="row">
+        <div class="col-md-4">
+            <img id="temMemberPic" src="{{ each.pic.url }}">
+        </div>
+        <div class="col-md-8">
+            <h3>Name: {{ each.name }}</h3>
+            <h4>Designation:{{ each.designation }}</h4>     
+            <p>Description: {{ each.description }}</p>       
+        </div>
+    </div>    
 </div>
 
 {% endfor %}
