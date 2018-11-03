@@ -1,1 +1,1 @@
-web: gunicorn entabulature_py3.wsgi --access-logfile -
+web: gunicorn entabulature_py3.wsgi
