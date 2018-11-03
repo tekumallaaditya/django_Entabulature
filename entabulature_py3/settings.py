@@ -29,7 +29,7 @@ SECRET_KEY = 'o&qogrd=pg4(=z6^x^w4=b+r+p9w9^c#gs$@km(y#xxn51ak#^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cryptic-retreat-15099.herokuapp.com']
 
 
 # Application definition
